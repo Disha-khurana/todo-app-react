@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../auth/AuthContext';
-import { convertBase64 } from '../helper';
 import EditProfile from '../components/EditProfile';
-import profile from '../assets/profile.jpg';
+import { formatProfileDate } from '../helper/index';
 
 function Profile(props) {
     const init = {
         DOB: "",
         gender: "",
-        phone: ""
+        phone: "",
+        designation:"",
+        image:""
     };
 
     const [imgVal, setImgVal] = useState("");
@@ -20,7 +21,9 @@ function Profile(props) {
             setUserDetails({
                 DOB: user.DOB,
                 gender: user.gender,
-                phone: user.phone
+                phone: user.phone,
+                designation: user.designation,
+                image: user.image
             });
         }
     }, [user]);
@@ -35,35 +38,24 @@ function Profile(props) {
         }
     }, [message, setMessage]);
 
-    const handleImage = async (e) => {
-        let file = e.target.files[0];
-        let imgString = await convertBase64(file);
-        setImgVal(imgString);
-    };
 
     const handleDetails = (updatedDetails) => {
         setUserDetails(updatedDetails);
     };
 
     return (
-        <div className='container bg-dark mt-5 p-5 h-50 w-50'>
+        <div className='container bg-dark mt-5 p-5 h-70 w-60'>
             <div className='row'>
                 <div className='col-md-4'>
-                {imgVal ? (
-                        <img className='img-fluid img' src={imgVal} alt='profilepic' />
-                    ) : (
-                        <>
-                            <input type='file' onChange={handleImage} />
-                            <img className='img-fluid img' src={profile} alt='profilepic' />
-                        </>
-                    )}
+                <img src={userDetails.image || imgVal} className="card-img-top" alt="..." style={{ width: '100%', border:"2px solid"}} />
                 </div>
                 <div className='col-md-7 text-white text-top-right'>
                     <p><b>{user?.name}</b></p>
                     <p>{user?.email}</p>
-                    <p>{userDetails?.DOB}</p>
+                    <p>{formatProfileDate(userDetails?.DOB)}</p>
                     <p>{userDetails?.gender}</p>
                     <p>{userDetails?.phone}</p>
+                    <p>{userDetails?.designation}</p>
                     <button className='btn btn-primary p-2 w-50 mb-5 mt-4 button text-black' data-bs-toggle="modal" data-bs-target="#profile-modal">
                         <b>Edit Profile</b>
                     </button>

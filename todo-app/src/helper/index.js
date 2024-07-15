@@ -10,6 +10,17 @@ export const formatDate = (str) => {
     return format;
 }
 
+export const formatProfileDate = (str) => {
+    const date = new Date(str)
+    const year=`${date.getFullYear()}`;
+    const month=`${(date.getMonth() + 1).toString().padStart(2,'0')}`;
+    const newdate=`${(date.getDate()).toString().padStart(2,'0')}`;
+
+    const format = `${newdate}/${month}/${year} `                          
+    
+    return format;
+}
+
 export const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
         const fileReader = new FileReader();

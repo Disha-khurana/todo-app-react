@@ -1,12 +1,16 @@
 import React, { useState, useContext } from 'react';
 import AuthContext from '../auth/AuthContext';
+import { convertBase64 } from '../helper';
 
 function EditProfile({ userDetails, handleDetails, updateUser }) {
     const { user } = useContext(AuthContext);
+    const [imgVal, setImgVal] = useState("");
     const [updatedDetails, setUpdatedDetails] = useState({
         DOB: userDetails?.DOB,
         gender: userDetails?.gender,
         phone: userDetails?.phone,
+        designation: userDetails?.designation,
+        image: userDetails?.image,
         id: user?.id
     });
 
@@ -18,6 +22,16 @@ function EditProfile({ userDetails, handleDetails, updateUser }) {
             [name]: value,
             id: user.id
         }));
+    };
+
+    const handleImage = async (e) => {
+        let file = e.target.files[0];
+        let imgString = await convertBase64(file);
+        setImgVal(imgString);
+        setUpdatedDetails((prev)=>({
+            ...prev,
+            image :imgString
+            }))
     };
 
     const handleSubmit = (e) => {
@@ -89,6 +103,24 @@ function EditProfile({ userDetails, handleDetails, updateUser }) {
                                     className="form-control"
                                     placeholder="Enter contact number"
                                 />
+                               <div className="mb-3">
+                                <label htmlFor="designation" className="form-label">Designation</label>
+                                <select
+                                    name="designation"
+                                    value={updatedDetails.designation}
+                                    onChange={handleChange}
+                                    className="form-select"
+                                    required
+                                >
+                                    <option value="" disabled>Select Designation</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="SEO Executive">SEO Executive</option>
+                                    <option value="Software Engineer">Software Engineer</option>
+                                    <option value="Python Developer">Python Developer</option>
+                                </select>
+                            </div>
+                            <input type="file" onChange={handleImage} value={updatedDetails.imgVal} accept='image/*' />
                             </div>
                             <button type="submit" className="btn btn-light">Save Changes</button>
                             <button type="button" className="btn btn-warning ms-2" data-bs-dismiss="modal">Cancel</button>
