@@ -1,0 +1,44 @@
+@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+
+html,body{
+    height: 100%;
+}
+
+#root{
+    height: 100%;
+}
+
+.bg-primary{
+    background-color: #131823 !important;
+}
+
+.bg-secondary{
+    background-color: gray !important;
+}
+
+.text-primary{
+    color:#131823 !important;
+}
+
+.btn-primary{
+    background-color: #131823 !important;
+    border-color: #131823;
+}
+
+.img{
+    border-radius: 70%;
+    margin-top: 50px;
+}
+
+.text-top-right {
+    align-items: flex-start;
+    height: 100%;
+    font-size: 25px;
+    margin-left: 40px;
+}
+
+.button{
+    font-size: 20px;
+    background-color: white !important;
+    
+}

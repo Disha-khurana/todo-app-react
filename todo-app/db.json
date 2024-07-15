@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "name": "Disha",
+      "email": "khuranadisha2@gmail.com",
+      "password": "123",
+      "id": 1,
+      "DOB": "2024-07-20",
+      "gender": "Female",
+      "phone": "7508526698"
+    },
+    {
+      "name": "sagar",
+      "email": "sagarkhurana@1234",
+      "password": "321",
+      "id": 2
+    },
+    {
+      "name": "kashish",
+      "email": "kashish@123",
+      "password": "4321",
+      "id": 3,
+      "DOB": "2024-07-24",
+      "gender": "Female",
+      "phone": "8708320904"
+    },
+    {
+      "name": "palak",
+      "email": "palak@gmail.com",
+      "password": "456",
+      "id": 4
+    }
+  ],
+  "tasks": [
+    {
+      "title": "work",
+      "description": "work hard",
+      "duedate": "2024-07-19T00:13",
+      "userid": 1,
+      "modifiedon": "Sun Jul 14 2024 21:11:39 GMT+0530 (India Standard Time)",
+      "id": 1
+    },
+    {
+      "title": "job",
+      "description": "secure job",
+      "duedate": "2024-07-14T21:12",
+      "userid": 1,
+      "modifiedon": "Sun Jul 14 2024 21:12:23 GMT+0530 (India Standard Time)",
+      "id": 3
+    },
+    {
+      "title": "study",
+      "description": "learn dsa",
+      "duedate": "2024-07-25T21:12",
+      "userid": 1,
+      "modifiedon": "Sun Jul 14 2024 21:12:40 GMT+0530 (India Standard Time)",
+      "id": 4
+    },
+    {
+      "title": "meeting",
+      "description": "meeting with clients",
+      "duedate": "2024-07-18T11:38",
+      "userid": 1,
+      "modifiedon": "Mon Jul 15 2024 11:38:24 GMT+0530 (India Standard Time)",
+      "id": 5
+    },
+    {
+      "title": "eat",
+      "description": "eat",
+      "duedate": "2024-07-20T19:21",
+      "userid": 3,
+      "modifiedon": "Mon Jul 15 2024 19:21:50 GMT+0530 (India Standard Time)",
+      "id": 6
+    }
+  ]
+}
