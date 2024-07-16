@@ -2,7 +2,9 @@
 
 html,body{
     height: 100%;
+    background-color:#DBE9FA;    ;
 }
+
 
 #root{
     height: 100%;
@@ -17,7 +19,7 @@ html,body{
 }
 
 .text-primary{
-    color:#131823 !important;
+    color: #131823 !important;
 }
 
 .btn-primary{

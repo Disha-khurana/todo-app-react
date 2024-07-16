@@ -1,7 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext,  } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import AuthContext from '../auth/AuthContext'
+import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import{faUser} from '@fortawesome/free-solid-svg-icons'
 
 function Navbar(props) {
   const { user , logout } = useContext(AuthContext);              //get value i.e obj
@@ -34,7 +36,7 @@ function Navbar(props) {
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/about">
+          <Link className="nav-link " to="/about">
             About
           </Link>
         </li>
@@ -70,16 +72,16 @@ function Navbar(props) {
           </Link>
           <ul className="dropdown-menu dropdown-menu-end">
             <li>
-              <Link className="dropdown-item" to="/profile">
-                Profile
-              </Link>
-            </li>
-            <li>
               <a className="dropdown-item" href="#" onClick={logout}>
                 Logout
               </a>
             </li>
           </ul>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/profile">
+              <FontAwesomeIcon icon={faUser} />
+          </Link>
         </li>
         </>
         }

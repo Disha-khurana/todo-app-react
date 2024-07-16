@@ -34,13 +34,13 @@ function Popup(props) {
           type === "edit" ?
                 <div><TaskForm isUpdate={true} data={data} btnClose={btnClose} isPopup={true}/></div> : 
                 <div className='p-2'>
-                  <p>Are you sure? you want to delete the task?</p>
+                  <p>Do you want to delete the task?</p>
                   
                   <div className='d-flex'>
                   <p>{tmessage}</p> 
                   
-                 <button className='btn btn-danger ms-auto' onClick={delTask}  >Yes</button>            
-                    <button className='btn btn-warning ms-2' data-bs-dismiss="modal">No</button>
+                 <button className='btn btn-light ms-auto' onClick={delTask}  >Yes</button>            
+                    <button className='btn btn-info ms-2' data-bs-dismiss="modal">No</button>
                 
                   </div>
                 </div>

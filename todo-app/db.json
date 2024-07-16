@@ -48,28 +48,12 @@
   ],
   "tasks": [
     {
-      "title": "work",
-      "description": "work hard",
-      "duedate": "2024-07-19T00:13",
-      "userid": 1,
-      "modifiedon": "Sun Jul 14 2024 21:11:39 GMT+0530 (India Standard Time)",
-      "id": 1
-    },
-    {
       "title": "job",
       "description": "secure job",
       "duedate": "2024-07-14T21:12",
       "userid": 1,
       "modifiedon": "Sun Jul 14 2024 21:12:23 GMT+0530 (India Standard Time)",
       "id": 3
-    },
-    {
-      "title": "study",
-      "description": "learn dsa",
-      "duedate": "2024-07-25T21:12",
-      "userid": 1,
-      "modifiedon": "Sun Jul 14 2024 21:12:40 GMT+0530 (India Standard Time)",
-      "id": 4
     },
     {
       "title": "meeting",
